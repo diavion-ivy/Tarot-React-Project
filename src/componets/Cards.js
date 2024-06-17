@@ -3,9 +3,14 @@ import singleCard from './singleCard.jpg';
 function Cards(){
 
     return(
-        <div className="cards">
-            <img src={singleCard} alt='single card'/>
-        </div>
+
+        <div className="spread-cards">
+        {[...Array(12)].map((_, index) => (
+            <div className="card" key={index}>
+                <img src={singleCard} alt='single card'/>
+            </div>
+        ))}
+    </div>
     )
 }
 
