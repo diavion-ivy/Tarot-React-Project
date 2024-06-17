@@ -2,7 +2,9 @@ import './App.css';
 import Cards from './componets/Cards.js'
 import Results from './componets/Results.js'
 
+
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +14,6 @@ function App() {
       <section className='deckOfCards'>
         <Cards/>
       </section> 
-      <button className='shuffle' >Shuffle Cards</button>
       <section className='results'>
         <Results/>
       </section> 
