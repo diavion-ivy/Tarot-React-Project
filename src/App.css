@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +35,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.footer #copyrightText {
+  color: white;
+  font-size: calc(.5px + 1vmin);
+  margin-left:2em;
+  margin-right:2em ;
+}
+
+.cards img{
+  height: 12em;
+  border-radius: 10px;
+  filter: drop-shadow(-1.5mm 1.5mm  rgb(234, 228, 214));
+  margin-bottom: 1em;
 }

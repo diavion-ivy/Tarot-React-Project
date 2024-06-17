@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Cards from './componets/Cards.js'
+import Results from './componets/Results.js'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src='https://static.vecteezy.com/system/resources/previews/011/664/725/original/tarot-sign-symbol-atl-png.png' className="App-logo" alt="logo" />
+      <h1>Tarot Tech Titan Readings</h1>
       </header>
+      <section className='deckOfCards'>
+        <Cards/>
+      </section> 
+      <button className='shuffle' >Shuffle Cards</button>
+      <section className='results'>
+        <Results/>
+      </section> 
+      <footer className='footer'>
+        <p>Tarot Tech Titans &copy; </p>
+        <p id= 'copyrightText'>All information provided by TarotTechTitans.com is for entertainment purposes only. If you have serious problems, speak to a professional.</p>
+      </footer>
     </div>
   );
 }
