@@ -14,13 +14,13 @@ function Cards(){
             <div className='card' key={index}>
                 <img src={singleCard} alt='single card'
                     onClick={((e) => {
-                        if(count > 1 ){
+                        if(count > 1 && e.target.className != 'selected'){
                            setCount(count - 1) 
                            let countdown = `Select ${count - 1} cards to have your past, present, and future told`
                            document.querySelector('.instruction').textContent = countdown
                            console.log(countdown)
                            e.target.className ='selected'
-                        } else if(count === 1){
+                        } else if(count === 1 && e.target.className != 'selected'){
                             e.target.className ='selected'
                             setCount(count - 1)
                             document.querySelector('.instruction').classList.add('hidden')
@@ -29,7 +29,7 @@ function Cards(){
                             resultButton.textContent = 'Get your reading'
                             document.querySelector('.deckOfCards').append(resultButton);
 
-                        }
+                        } 
                     })}
                 />
             </div>
