@@ -2,7 +2,7 @@ import '../App.css';
 import singleCard from './singleCard.jpg';
 import { useState } from 'react';
 import Results from './Results.js'
-
+import CardItems from './CardItems.js';
 
 function Cards(){
     const [cardClassName, setCardClassName] = useState('stacked-cards')
@@ -30,8 +30,8 @@ function Cards(){
                             resultButton.textContent = 'Get your reading'
                             document.querySelector('.deckOfCards').append(resultButton);
                             resultButton.addEventListener('click', () => {
-                                console.log('clickevent')
-                                (<Results/>)
+                                //console.log('clickevent')
+                                return ((<CardItems/>))
                             })
                         } 
                     })}
