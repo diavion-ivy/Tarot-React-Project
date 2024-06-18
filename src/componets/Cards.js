@@ -1,6 +1,7 @@
 import '../App.css';
 import singleCard from './singleCard.jpg';
 import { useState } from 'react';
+import Results from './Results.js'
 
 
 function Cards(){
@@ -28,7 +29,10 @@ function Cards(){
                             resultButton.classList.add('myButton')
                             resultButton.textContent = 'Get your reading'
                             document.querySelector('.deckOfCards').append(resultButton);
-
+                            resultButton.addEventListener('click', () => {
+                                console.log('clickevent')
+                                (<Results/>)
+                            })
                         } 
                     })}
                 />
