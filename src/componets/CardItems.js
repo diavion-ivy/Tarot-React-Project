@@ -1,14 +1,18 @@
 import Results from './Results.js'
 
 function CardItems({card}){
+
+
+
     return(
         <div>
             <h2>{card.name}</h2>
-            <p>Positive Interpretation:{card.meaning_up}</p>
-            <p>Negative Interpretation:{card.meaning_rev}</p>
-            <p>Description:{card.desc}</p>
-            <p>Suit:{card.suit}</p>
-            <p>Type:{card.type}</p>
+            <img src={card.img} alt="Tarot Card Image"/>
+            <p><strong>Description:</strong> {card.desc}</p>
+            <p><strong>Positive Interpretation:</strong> {card.meaning_up}</p>
+            <p><strong>Negative Interpretation:</strong> {card.meaning_rev}</p>
+            <p><strong>Suit:</strong> {card.suit} <strong>Type:</strong> {card.type}</p>
+            <p></p>
         </div>
     )
 }
