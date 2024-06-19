@@ -5,7 +5,7 @@ export const imagesArray =
         {src:'https://www.purplegarden.co/blog/wp-content/uploads/2023/03/01-The-Magician-Tarot-card-img-182x300-1.jpg.webp',
         name:'The Magician'},
         {src:'https://www.purplegarden.co/blog/wp-content/uploads/2023/03/02-The-High-Priestess-Tarot-card-img-182x300-1.jpg.webp',
-        name:'The Hight Priestess'},
+        name:'The High Priestess'},
         {src:'https://www.purplegarden.co/blog/wp-content/uploads/2023/03/03-The-Empress-Tarot-card-img-182x300-1.jpg.webp',
         name:'The Empress'},
         {src:'https://www.purplegarden.co/blog/wp-content/uploads/2023/03/04-The-Emperor-Tarot-card-img-182x300-1.jpg.webp',

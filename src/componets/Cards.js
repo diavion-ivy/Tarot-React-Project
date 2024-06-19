@@ -1,54 +1,57 @@
 import '../App.css';
 import singleCard from './singleCard.jpg';
-import { useState } from 'react';
-import Results from './Results.js'
-import CardItems from './CardItems.js';
+import { useState, useContext } from 'react';
+import { StateContext, DispatchContext} from '../context/AppState';
 
 function Cards(){
     const [cardClassName, setCardClassName] = useState('stacked-cards')
     const [buttonClass, setButtonClass] = useState('myButton')
-    const [count, setCount]= useState(3)
+    const [instructions, setInstructions] = useState('hidden')
+    const [readingButton, setReadingButton] = useState('hidden')
+
+    const appState = useContext(StateContext)
+    const dispatch = useContext(DispatchContext)
+
+    function cardClicked (e, index) {
+        if(appState.count > 1 && e.target.className !== 'selected'){
+            dispatch({type: 'DECREASE_COUNT'}) 
+           e.target.className ='selected'
+           dispatch({
+            type: 'SELECT_CARDS',
+            payload: index
+           })
+        } else if(appState.count === 1 && e.target.className !== 'selected'){
+            e.target.className ='selected'
+            dispatch({type: 'DECREASE_COUNT'})
+            setReadingButton('myButton')
+            setInstructions('hidden')
+        } 
+    }
+
     return(
+    
     <div>
         <div className={cardClassName}>
         {[...Array(12)].map((_, index) => (
             <div className='card' key={index}>
-                <img src={singleCard} alt='single card'
+                <img src={singleCard} className={appState.selectedCards.includes(index) ? 'selected' : ''} alt='single card'
                     onClick={((e) => {
-                        if(count > 1 && e.target.className != 'selected'){
-                           setCount(count - 1) 
-                           let countdown = `Select ${count - 1} cards to have your past, present, and future told`
-                           document.querySelector('.instruction').textContent = countdown
-                           console.log(countdown)
-                           e.target.className ='selected'
-                        } else if(count === 1 && e.target.className != 'selected'){
-                            e.target.className ='selected'
-                            setCount(count - 1)
-                            document.querySelector('.instruction').classList.add('hidden')
-                            let resultButton = document.createElement('button')
-                            resultButton.classList.add('myButton')
-                            resultButton.textContent = 'Get your reading'
-                            document.querySelector('.deckOfCards').append(resultButton);
-                            resultButton.addEventListener('click', () => {
-                                //console.log('clickevent')
-                                return ((<CardItems/>))
-                            })
-                        } 
+                        cardClicked(e, index);
                     })}
                 />
             </div>
         ))}
 
         </div>
+        <br></br>
+        <br></br>
         <button className={buttonClass} onClick={(()=> {
             setCardClassName('spread-cards')
             setButtonClass('hidden')
-            let countdown = document.createElement('p')
-            countdown.classList.add('instruction')
-            countdown.textContent = 'Select 3 cards to have your past, present, and future told'
-            document.querySelector('.deckOfCards').append(countdown);
+            setInstructions('')
         })}>Shuffle Cards</button>
-
+        <button className={readingButton} onClick={() => dispatch({type: 'GET_READING'})}>Get your reading</button>
+        <p className={instructions}>Select {appState.count} cards to have your past, present, and future told</p>
     </div>
     )
 }
