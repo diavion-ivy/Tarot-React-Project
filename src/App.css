@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 25vmin;
   pointer-events: none;
 }
 
@@ -63,8 +63,12 @@
 
 }
 
+.stacked-cards .card:nth-child(even) {
+   transform: rotate(0) translateX(2px) translateY(2px) scale(1);
+}
+
 .stacked-cards .card:nth-child(odd) {
-   transform: rotate(-2deg) translateX(-2px) translateY(2px) scale(1);
+  transform: rotate(-2deg) translateX(-2px) translateY(2px) scale(1);
 }
 
 .spread-cards { 
@@ -74,7 +78,25 @@
   align-items: center;
   height: auto; 
   margin: 7em;
+}
 
+.Results {
+  margin-top: 2em;
+  margin-bottom: 6em;
+  padding: 1em;
+  border-radius: 5%;
+  color: black;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #ccc2a6;
+}
+
+.Results h2{
+  text-decoration: underline;
+}
+
+.Results img{
+  height: 11em;
 }
 
 .spread-cards .card { 

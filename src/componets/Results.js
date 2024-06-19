@@ -28,18 +28,18 @@ function Results(){
     },[])
  
   return(
-<div>
-    {readings && readings.cards.map((card) =>
-{
-    return(       
-        <CardItems
-            key = {card.value_int}
-            card = {card}
-        />
-    )
-})     
-    }
-</div>
+    <div>
+        {readings && readings.cards.map((card) =>
+            {
+                return(       
+                    <CardItems
+                        key = {card.value_int}
+                        card = {card}
+                    />
+                    )
+            })     
+        }
+    </div>
   )
  
 }
