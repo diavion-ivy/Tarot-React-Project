@@ -15,7 +15,7 @@ function App() {
         <Cards/>
       </section> 
       <section className='results'>
-        <Results/>
+  
       </section> 
       <footer className='footer'>
         <p>Tarot Tech Titans &copy; </p>
