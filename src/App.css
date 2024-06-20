@@ -12,10 +12,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.bg-image{
+  background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjZqZGszdzJtN3QzYnhjYnF6NmZ1YTIyNzg2d3FtOXpseHpzNWxrciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9k1173PdfJWRsoE/giphy.webp');
+  filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .App {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34; */
+
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,11 +54,14 @@
 
 .footer{
   position: relative;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  font-size: calc(.75px + 2vmin);
 }
 
 .footer #copyrightText {
   color: white;
-  font-size: calc(.5px + 1vmin);
+  font-size: calc(.75px + 1.25vmin);
   margin-left:2em;
   margin-right:2em ;
   
@@ -77,23 +94,71 @@
   justify-content: center;
   align-items: center;
   height: auto; 
-  margin: 7em;
+  margin: 4em 7em 1em 7em; 
+}
+
+.resultCard{
+  display:grid;
+  grid-template: 
+            "a a a" auto
+            "b c c" auto
+            "b c c" auto / 1fr 1fr 1fr;
+  border-radius: 5%;
+  color: black;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #ffffffa7;
+
+  padding: 1em;
+  grid-gap: 1em;
+  margin-top: 1em;
 }
 
 .Results {
   margin-top: 2em;
   margin-bottom: 6em;
-  padding: 1em;
-  border-radius: 5%;
-  color: black;
-  margin-left: 25%;
-  margin-right: 25%;
-  background-color: #ccc2a6;
+ 
+}
+.cardHeader {
+  grid-area: a;
 }
 
-.Results h2{
-  text-decoration: underline;
+.cardImg {
+  padding-top: .70em;
+  grid-area: b;
+  /* grid-row: b / span c; */
+
+  
 }
+
+.cardResults {
+  grid-area: c;
+  font-size: 1.4vh;
+  text-align: left;
+}
+
+
+.cardHeader{
+  padding-bottom: -50;
+}
+
+.cardHeader p{
+  margin-bottom: .5em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+ }
+
+.cardResults p {
+margin-bottom: 1em;
+}
+
+
+/* .Results h2{
+  text-decoration: underline;
+} */
 
 .Results img{
   height: 11em;
@@ -124,13 +189,13 @@
 .spread-cards .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 12px 15px rgba(0, 0, 0, 0.2);
-  filter: drop-shadow(0 0 0.75rem crimson);
+  filter: drop-shadow(0 0 0.75rem #ff0080);
 }
 
 .selected {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 12px 15px rgba(0, 0, 0, 0.2);
-  filter: drop-shadow(0 0 0.75rem crimson);
+  filter: drop-shadow(0 0 0.75rem #ff0080);
 }
 
 .myButton {
@@ -162,3 +227,72 @@
 .hidden{
   display: none;
 }
+
+
+
+/*site title font*/
+@font-face {
+  font-family: Porter;
+	src: url('https://zephyo.github.io/22Days/code/15/graphics/Porter Bold.ttf');}
+
+body {
+    word-wrap: break-word;
+    background-color: #000; 
+}
+
+.siteTitle {
+    margin: 100px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    color: #fff;
+    height:80px;
+     text-shadow:
+               -3px 10px 0 #DC143C,
+               -5px 20px 0 #FFA500,
+               -7px 30px 0 #FFFF00,
+               -9px 40px 0 #2E8B57,
+               -11px 50px 0 #20B2AA,
+               -13px 60px 0 #9370DB;
+    text-align:center;
+}
+
+.siteTitle h1:hover {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    line-height: 100%;
+    font-weight: 600;
+        -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+
+.siteTitle h1 {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    line-height: 100%;
+    font-weight: 600;
+        -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.siteTitle h1 {
+    font-size: 75px;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+font-family: 'Londrina Outline', cursive;
+    font-style:italic;
+   
+}
+
+.siteTitle h1:hover {
+    text-shadow:0 0 0;
+  
+}
+
+.siteTitle2 h1{ color:white !important;text-shadow:1px 1px 1px #fff;text-shadow:1px 1px 10px #ddd;font-family: 'Dancing Script', cursive;
+}
+.siteTitle2 h1:hover{text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;text-decoration:none !important;
+} 

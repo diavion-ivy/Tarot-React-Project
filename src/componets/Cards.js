@@ -8,6 +8,7 @@ function Cards(){
     const [buttonClass, setButtonClass] = useState('myButton')
     const [instructions, setInstructions] = useState('hidden')
     const [readingButton, setReadingButton] = useState('hidden')
+    const [refreshButton, setRefreshButton] = useState('hidden')
 
     const appState = useContext(StateContext)
     const dispatch = useContext(DispatchContext)
@@ -50,8 +51,9 @@ function Cards(){
             setButtonClass('hidden')
             setInstructions('')
         })}>Shuffle Cards</button>
-        <button className={readingButton} onClick={() => dispatch({type: 'GET_READING'})}>Get your reading</button>
+        <button className={readingButton} onClick={() => { dispatch({type: 'GET_READING'}); setReadingButton('hidden'); setRefreshButton('myButton')}}>Get your reading</button>
         <p className={instructions}>Select {appState.count} cards to have your past, present, and future told</p>
+        <button className={refreshButton}  onClick={() => { window.location.reload()}}>Get new reading</button>
     </div>
     )
 }

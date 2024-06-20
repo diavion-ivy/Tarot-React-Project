@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { StateContext} from '../context/AppState';
 
 
-function CardItems({card}){
+function CardItems({card, cardTitle}){
 
     console.log("CardItems Ran")
 
@@ -13,13 +13,25 @@ function CardItems({card}){
 
     return(
         <div className={appState && appState.getReadingButton}>
-                <h2>{card.name}</h2>
-                <img src={card.img} alt="Tarot Card Image"/>
-                <p><strong>Description:</strong> {card.desc}</p>
-                <p><strong>Positive Interpretation:</strong> {card.meaning_up}</p>
-                <p><strong>Negative Interpretation:</strong> {card.meaning_rev}</p>
-                <p><strong>Suit:</strong> {card.suit} <strong>Type:</strong> {card.type}</p>
-                <p></p>
+                <div className="siteTitle2">
+                    <h1>{cardTitle.name}</h1>
+                    <p><i>{cardTitle.explanation}</i></p>
+                </div>
+                <div className='resultCard'>
+                    <div className='cardHeader'>
+                        <h2>{card.name}</h2>
+                    </div>
+
+                    <div className='cardImg'>
+                        <img src={card.img} alt="Tarot Card Image"/>
+                    </div>
+                    <div className='cardResults'>
+                        <p><strong>Description:</strong> {card.desc}</p>
+                        <p><strong>Positive Interpretation:</strong> {card.meaning_up}</p>
+                        <p><strong>Negative Interpretation:</strong> {card.meaning_rev}</p>
+                        <p><strong>Suit:</strong> {card.suit} <strong>Type:</strong> {card.type}</p>
+                    </div>
+                </div>
         </div>
     )
 }
