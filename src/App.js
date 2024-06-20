@@ -19,11 +19,11 @@ function App() {
         <img src='https://static.vecteezy.com/system/resources/previews/011/664/725/original/tarot-sign-symbol-atl-png.png' className="App-logo" alt="logo" />
         <h1>Tarot Tech Titan Readings</h1>
       </header>
-      <section className='deckOfCards'>
-        <Cards/>
-      </section> 
       <section className='readings'>
         <Results/>
+      </section> 
+      <section className='deckOfCards'>
+        <Cards/>
       </section> 
       <footer className='footer'>
         <p>Tarot Tech Titans &copy; </p>
