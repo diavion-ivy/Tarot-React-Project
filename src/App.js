@@ -13,11 +13,11 @@ function App() {
   return (
     <StateContext.Provider value={appState}>
     <DispatchContext.Provider value={dispatch}>
-    <div class="bg-image"></div>
+    <div className="bg-image"></div>
     <div className="App">
       <header className="App-header siteTitle2">
-        <img src='https://static.vecteezy.com/system/resources/previews/011/664/725/original/tarot-sign-symbol-atl-png.png' className="App-logo" alt="logo" />
-        <h1>Tarot Tech Titan Readings</h1>
+        <img onClick={()=>{window.location.reload()}} src='https://static.vecteezy.com/system/resources/previews/011/664/725/original/tarot-sign-symbol-atl-png.png' className="App-logo" alt="logo"/>
+        <h1 onClick={()=>{window.location.reload()}}>Tarot Tech Titan Readings</h1>
       </header>
       <section className='readings'>
         <Results/>

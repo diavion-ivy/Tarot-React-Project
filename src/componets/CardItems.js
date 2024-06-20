@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { StateContext} from '../context/AppState';
 
 
-function CardItems({card, cardTitle}){
+function CardItems({card, cardTitle,index}){
 
     console.log("CardItems Ran")
 
@@ -12,8 +12,8 @@ function CardItems({card, cardTitle}){
     console.log('app State = ', appState)
 
     return(
-        <div className={appState && appState.getReadingButton}>
-                <div className="siteTitle2">
+        <div className={appState && appState.getReadingButton} >
+                <div className= "ppf">
                     <h1>{cardTitle.name}</h1>
                     <p><i>{cardTitle.explanation}</i></p>
                 </div>

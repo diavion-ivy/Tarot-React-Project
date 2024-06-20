@@ -48,12 +48,14 @@ function Results(){
                     ppf = { name:'Future',
                              explanation:'"Provides insight into the direction things are moving in"' }
                 }
-                return(       
-                    <CardItems
-                        key = {card.value_int}
-                        card = {card}
-                        cardTitle = {ppf}
-                    />
+                return(
+                            <CardItems
+                                key = {card.value_int}
+                                card = {card}
+                                cardTitle = {ppf}
+                                index = {index}
+                            />
+
                     )
             })     
         }
