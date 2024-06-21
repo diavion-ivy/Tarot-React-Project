@@ -10,10 +10,6 @@ export const initialState = {
 export const StateContext = createContext(null);
 export const DispatchContext = createContext(null);
 
-function checkCount(state) {
-    
-}
-
 export const reducer = (state, action) => {
     let setSelectedCards;
     switch(action.type){
@@ -21,9 +17,6 @@ export const reducer = (state, action) => {
             setSelectedCards = [...state.selectedCards, action.payload]
             return {...state, selectedCards: setSelectedCards}
         case'REMOVE_CARDS':
-        // index of method
-        // selected cards.indexof
-        // use this with splice
             setSelectedCards = [...state.selectedCards]
             let indexCard= setSelectedCards.indexOf(action.payload)
             setSelectedCards.splice(indexCard,1)
