@@ -5,11 +5,7 @@ import { StateContext} from '../context/AppState';
 
 function CardItems({card, cardTitle,index}){
 
-    console.log("CardItems Ran")
-
-    const appState = useContext(StateContext)
-
-    console.log('app State = ', appState)
+    const appState = useContext(StateContext);
 
     return(
         <div className={appState && appState.getReadingButton} >
@@ -21,9 +17,8 @@ function CardItems({card, cardTitle,index}){
                     <div className='cardHeader'>
                         <h2>{card.name}</h2>
                     </div>
-
                     <div className='cardImg'>
-                        <img src={card.img} alt="Tarot Card Image"/>
+                        <img src={card.img} alt="Tarot Card"/>
                     </div>
                     <div className='cardResults'>
                         <p><strong>Description:</strong> {card.desc}</p>

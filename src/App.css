@@ -27,9 +27,6 @@
 }
 
 .App {
-  /* background-color: #282c34; */
-
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,9 +122,6 @@
 .cardImg {
   padding-top: 6px;
   grid-area: b;
-  /* grid-row: b / span c; */
-
-  
 }
 
 .cardResults {
@@ -153,7 +147,6 @@
 .cardResults p {
 margin-bottom: 1em;
 }
-
 
 .Results img{
   height: 11em;
@@ -221,8 +214,6 @@ margin-bottom: 1em;
 .hidden{
   display: none;
 }
-
-
 
 /*site title font*/
 @font-face {
