@@ -51,7 +51,7 @@ function Cards(){
             setButtonClass('hidden')
         })}>Shuffle Cards</button>
         <button className={appState.selectedCards.length>=3 && appState.getReadingButton!=='Results' ? 'myButton' : 'hidden'} onClick={() => { dispatch({type: 'GET_READING' }); setRefreshButton('myButton'); setCardClassName('hidden')}}>Get your reading</button>
-        <p className={appState.selectedCards.length>=3 ? 'hidden' : ''}>Select {appState.count} cards to have your past, present, and future told</p>
+        <p className={appState.selectedCards.length>=3 || cardClassName !== 'spread-cards' ? 'hidden' : ''}>Select {appState.count} cards to have your past, present, and future told</p>
         <button className={refreshButton}  onClick={() => { window.location.reload() }}>Get new reading</button>
     </div>
     )
